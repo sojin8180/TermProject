@@ -52,7 +52,7 @@ void addEdge(char *identity, char *name, char *kind)
 	fresh->next = fresh->prev = NULL;
 	fresh->connect = NULL;
 	fresh->weight = 0;
-	addDlist(name, identity, kind);
+	//addDlist(name, identity, kind);
 
 	if (map == NULL)
 	{
