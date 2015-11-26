@@ -46,6 +46,23 @@ mysubway *map = NULL;
 Dijkstra *Dlist = NULL;
 int startrans;
 int transflag;
+void addDLL(char *name, int num)
+{
+	ForPrint *fresh;
+	fresh = (ForPrint *)malloc(sizeof(ForPrint));
+	fresh->next = fresh->prev = NULL;
+	strcpy(fresh->name, name);
+	fresh->real = num;
+
+	ForPrint *temp = head;
+	while (temp->next != NULL)
+	{
+		temp = temp->next;
+	}
+	temp->next = fresh;
+	fresh->prev = temp;
+	return;
+}
 void addDlist(char *name, char *identity, char *kind)
 {
 	Dijkstra *fresh = (Dijkstra *)malloc(sizeof(Dijkstra));
