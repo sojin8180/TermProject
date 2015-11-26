@@ -53,6 +53,7 @@ void addDLL(char *name, int num)
  if (head == NULL)
  {
   head = fresh;
+  return;
  }
  else
  {
