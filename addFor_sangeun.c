@@ -35,12 +35,11 @@ typedef struct ForPrint
 	struct ForPrint *next;
 	struct ForPrint *prev;
 }ForPrint;
-
 typedef struct ForT
 {
 	char name[30];
-	struct ForPrint *next; 
-	struct ForPrint *prev; 
+	struct ForT *next; //11.26 ForPrint->ForT
+	struct ForT *prev; //11.26 ForPrint->ForT
 }ForT;
 ForT *first = NULL;
 mysubway *map = NULL;
