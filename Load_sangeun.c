@@ -44,11 +44,39 @@ typedef struct ForT
 
 mysubway *map = NULL;
 ForT *first = NULL;
+Dijkstra *Dlist = NULL;
+
+
 void Load(void); // 지하철 정보를 얻어올 함수
 
 int main(void)
 {
   Load();
+}
+void addDlist(char *name, char *identity, char *kind)
+{
+	Dijkstra *fresh = (Dijkstra *)malloc(sizeof(Dijkstra));
+	fresh->next = 0;
+	fresh->found = 0;
+	fresh->dist = 0;
+	fresh->real = 0;
+	strcpy(fresh->kind, kind);
+	strcpy(fresh->name, name);
+	strcpy(fresh->identity, identity);
+	if (Dlist == NULL)
+	{
+		Dlist = fresh;
+		return;
+	}
+	else
+	{
+		Dijkstra *temp = Dlist;
+		while (temp->next != NULL)
+		{
+			temp = temp->next;
+		}
+		temp->next = fresh;
+	}
 }
 void addEdge(char *identity, char *name, char *kind)  // 구분은 호선이랑.. 연결관계를 추가.
 {
@@ -60,7 +88,7 @@ void addEdge(char *identity, char *name, char *kind)  // 구분은 호선이랑.
 	fresh->connect = NULL;
 	fresh->weight = 0;
 	// 판단은 kind로 결정.
-	//addDlist();
+	addDlist(name, identity, kind);
 
 	if (map == NULL)  // 맨 처음붙는 경우
 	{
