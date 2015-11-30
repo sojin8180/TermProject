@@ -47,6 +47,10 @@ void printRDLL(void)
 {
  ForPrint *temp = head;
  int cnt = 0;
+ while (temp->next != NULL)
+ {
+  temp = temp->next;
+ }
  while (temp->prev != NULL)
  {
   if (strcmp(temp->name, temp->prev->name) != 0)
