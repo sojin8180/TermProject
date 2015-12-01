@@ -64,6 +64,26 @@ void addDLL(char *name, int num)
 	fresh->prev = temp;
 	return;
 }
+void printRDLL(void)
+{
+ ForPrint *temp = head;
+ int cnt = 0;
+ while (temp->next != NULL)
+ {
+  temp = temp->next;
+ }
+ while (temp->prev != NULL)
+ {
+  if (strcmp(temp->name, temp->prev->name) != 0)
+  {
+   printf("%s->", temp->name);
+  }
+  temp = temp->prev;
+  cnt++;
+ }
+ printf("%s", temp->name);
+
+}
 void addDlist(char *name, char *identity, char *kind)
 {
 	Dijkstra *fresh = (Dijkstra *)malloc(sizeof(Dijkstra));
