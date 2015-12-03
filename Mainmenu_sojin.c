@@ -1,22 +1,3 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-#include<memory.h>
-
-typedef struct Dijkstra
-{
-	char identity[10];
-	char name[30];
-	int found;
-	int dist;
-	int real;
-	char kind[10];
-	struct Dijkstra *prev;
-	struct Dijkstra *next;
-}Dijkstra;
-
-Dijkstra *Dlist = NULL;
-
 void Mainmenu()
 {
 	char *startsubway; // 출발역과 도착역을 선택
@@ -68,19 +49,4 @@ void Mainmenu()
 		return;
 	}
 
-}
-
-int isInSubway(char *subway)
-{
-	// subway가 지하철역에 해당하나?
-	Dijkstra *search = Dlist;
-	while (search != NULL)
-	{
-		if (strcmp(search->name, subway) == 0)
-		{
-			return 1;
-		}
-		search = search->next;
-	}
-	return -999;
 }
