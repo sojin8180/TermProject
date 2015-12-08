@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #include<stdio.h>
+=======
+﻿#include<stdio.h>
+>>>>>>> 2e00cf30b0ec16e70ba153faf3bc6ae2129d16ae
 #include<string.h>
 #include<stdlib.h>
 
