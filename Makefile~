@@ -1,0 +1,11 @@
+all : subsystem1 subsystem2 copy
+
+subsystem1 :
+	cd lib; make all
+subsystem2 : 
+	cd apps; make
+copy :
+	cp ./apps/test ./test
+clean :
+	cd lib; make clean
+	cd apps; make clean
